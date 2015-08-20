@@ -147,6 +147,14 @@ var pipeline = [
             context.result.http.port = process.env.PORT;
         }
     },
+    
+    function codefreshDbUrl(context) {
+        // Override database URI - if using codefresh
+        if (process.env.MONGO_URI) {
+            context.result.database.uri = process.env.MONGO_URI;
+        }        
+    },
+
 
     function herokuDbUrl(context) {
         // Override database URI - if using a Heroku add-on
