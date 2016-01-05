@@ -6,7 +6,7 @@ A self-hosted chat app for small teams built by [Security Compass][seccom].
 
 [![Build Status](https://travis-ci.org/sdelements/lets-chat.svg?branch=master)](https://travis-ci.org/sdelements/lets-chat)
 [![Dependency Status](https://david-dm.org/sdelements/lets-chat.svg)](https://david-dm.org/sdelements/lets-chat)
-[![devDependency Status](https://david-dm.org/sdelements/lets-chat/dev-status.svg)](https://david-dm.org/sdelements/lets-chat#info=devDependencies)
+[![devDependency Status](https://david-dm.org/verchol/lets-chat/dev-status.svg)](https://david-dm.org/sdelements/lets-chat#info=devDependencies)
 
 ## Features and Stuff
 
