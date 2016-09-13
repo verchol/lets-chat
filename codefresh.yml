@@ -1,12 +1,17 @@
 version: '1.0'
 steps:
+ dependencies:
+      image: verchol/node-tools:all
+      fail-fast: false
+      working-directory : ${{initial-clone}}
+      commands:
+        - npm install
+
  unit-tests:
     image: verchol/node-tools:all
     fail-fast: false
     working-directory : ${{initial-clone}}
     commands:
-      - echo not supported yet
-      - npm install
       - npm test
 
  build-step:
