@@ -1,7 +1,14 @@
 version: '1.0'
 steps:
+
+ build-step:
+     type: build
+     dockerfile: Dockerfile
+     image-name: codefreshexamples/lets-chat
+     tag: codefesh
+
  dependencies:
-      image: node:0.10.46-slim
+      image: ${{build-step}}
       fail-fast: false
       working-directory : ${{initial-clone}}
       commands:
@@ -11,16 +18,10 @@ steps:
     image: verchol/node-tools:all
     fail-fast: false
     working-directory : ${{initial-clone}}
-    commands:
+    commands: 
       - npm test
 
- build-step:
-    type: build
-    dockerfile: Dockerfile
-    image-name: codefreshexamples/lets-chat
-    tag: codefesh
-
- after-build:
+after-build:
     image:  node:latest
     fail-fast: false
     commands :
