@@ -4,7 +4,7 @@ steps:
  build-step:
      type: build
      dockerfile: Dockerfile
-     image-name: codefreshexamples/lets-chat
+     image-name: verchol/lets-chat
      tag: codefesh
 
  push to registry:
