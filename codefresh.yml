@@ -1,9 +1,27 @@
 version: '1.0'
-
+#
 steps:
-  build-prj:
+  unit-tests:
+    image: verchol/node-tools:all
+    fail-fast: false
+    working-directory : ${{initial-clone}}
+    commands:
+      - echo not supported yet
+      - npm install
+      - npm test
+
+ build-step:
     type: build
-    description: codefresh example
-    image-name: codefreshexamples/lets-chat
     dockerfile: Dockerfile
-    tag: latest
+    image-name: codefreshexamples/lets-chat
+    tag: codefesh
+
+  after-build:
+    image:  node:latest
+    fail-fast: false
+    commands :
+       - echo 'after build'
+  #push to registry:
+  #  type: push
+  #  candidate: ${{build-step}}
+  #  tag: ${{CF_BRANCH}}
