@@ -28,11 +28,11 @@ steps:
 
  composition-step:
     type: composition
-    composition: test-composition-image
+    composition: lets-chat-integration
     composition-candidates:
       main:
         image: ${{build-step}}
-        command: bash -c 'git status'
+        command: curl app:5000
 
 after-build:
     image:  node:latest
