@@ -7,6 +7,10 @@ steps:
      image-name: codefreshexamples/lets-chat
      tag: codefesh
 
+ push to registry:
+     type: push
+     candidate: ${{build-step}}
+     tag: ${{CF_BRANCH}}
  # dependencies:
  #      image: ${{build-step}}
  #      fail-fast: false
