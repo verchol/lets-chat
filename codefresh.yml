@@ -1,7 +1,6 @@
 version: '1.0'
-#
 steps:
-  unit-tests:
+ unit-tests:
     image: verchol/node-tools:all
     fail-fast: false
     working-directory : ${{initial-clone}}
@@ -16,7 +15,7 @@ steps:
     image-name: codefreshexamples/lets-chat
     tag: codefesh
 
-  after-build:
+ after-build:
     image:  node:latest
     fail-fast: false
     commands :
