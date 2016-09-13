@@ -7,18 +7,18 @@ steps:
      image-name: codefreshexamples/lets-chat
      tag: codefesh
 
- dependencies:
-      image: ${{build-step}}
-      fail-fast: false
-      working-directory : ${{initial-clone}}
-      commands:
-        - npm install
+ # dependencies:
+ #      image: ${{build-step}}
+ #      fail-fast: false
+ #      working-directory : ${{initial-clone}}
+ #      commands:
+ #        - npm install
 
  unit-tests:
-    image: verchol/node-tools:all
-    fail-fast: false
+    image: ${{build-step}}
+    fail-fast: true
     working-directory : ${{initial-clone}}
-    commands: 
+    commands:
       - npm test
 
 after-build:
