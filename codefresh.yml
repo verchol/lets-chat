@@ -28,7 +28,7 @@ steps:
 
  composition-step:
     type: composition
-    composition: lets-chat-integration
+    composition: demo-chat-e2e
     composition-candidates:
       main:
         image: ${{build-step}}
