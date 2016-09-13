@@ -20,10 +20,19 @@ steps:
 
  unit-tests:
     image: ${{build-step}}
-    fail-fast: true
+    fail-fast: false
     working-directory : ${{initial-clone}}
     commands:
       - npm test
+
+
+ composition-step:
+    type: composition
+    composition: test-composition-image
+    composition-candidates:
+      main:
+        image: ${{build-step}}
+        command: bash -c 'git status'
 
 after-build:
     image:  node:latest
