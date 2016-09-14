@@ -40,5 +40,5 @@ steps:
       composition: demo-chat-e2e
       composition-candidates:
         main:
-          image: nhoag/docker-curl
+          image: nhoag/curl
           command: sleep 200 && curl http://app:5000/
