@@ -1,6 +1,7 @@
 version: '1.0'
 steps:
 
+
  build-step:
      type: build
      dockerfile: Dockerfile
@@ -24,6 +25,7 @@ unit-tests:
     working-directory : ${{initial-clone}}
     commands:
       - npm test
+      - echo $(date)
 
 
 composition-step:
