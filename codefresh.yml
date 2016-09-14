@@ -19,37 +19,26 @@ steps:
      type: push
      candidate: ${{build-step}}
      tag: ${{CF_BRANCH}}
- # dependencies:
- #      image: ${{build-step}}
- #      fail-fast: false
- #      working-directory : ${{initial-clone}}
- #      commands:
- #        - npm install
-
-unit-tests:
-    image: ${{build-step}}
-    fail-fast: false
-    working-directory : ${{initial-clone}}
-    commands:
-      - npm test
-      - echo $(date)
-
-after-build:
-    image:  node:latest
-    fail-fast: false
-    commands :
-       - echo 'after build'
-
-composition-step:
-    type: composition
-    composition: demo-chat-e2e
-    composition-candidates:
-      main:
-        image: ${{build-step}}
-        command: curl app:5000
 
 
-  #push to registry:
-  #  type: push
-  #  candidate: ${{build-step}}
-  #  tag: ${{CF_BRANCH}}
+ unit-tests:
+      image: ${{build-step}}
+      fail-fast: false
+      working-directory : ${{initial-clone}}
+      commands:
+        - npm test
+        - echo $(date)
+
+ after-build:
+      image:  node:latest
+      fail-fast: false
+      commands :
+         - echo 'after build'
+
+ composition-step:
+      type: composition
+      composition: demo-chat-e2e
+      composition-candidates:
+        main:
+          image: ${{build-step}}
+          command: curl app:5000
