@@ -7,14 +7,7 @@ steps:
     fail-fast: false
     commands :
        - echo 'we are about to start'
-
- unit-tests:
-     image: ${{build-step}}
-     fail-fast: false
-     working-directory : ${{initial-clone}}
-     commands:
-       - npm test
-       - echo $(dat
+ 
 
  build-step:
      type: build
