@@ -7,7 +7,7 @@ steps:
     fail-fast: false
     commands :
        - echo 'we are about to start'
- 
+
 
  build-step:
      type: build
@@ -34,6 +34,11 @@ unit-tests:
       - npm test
       - echo $(date)
 
+after-build:
+    image:  node:latest
+    fail-fast: false
+    commands :
+       - echo 'after build'
 
 composition-step:
     type: composition
@@ -43,11 +48,7 @@ composition-step:
         image: ${{build-step}}
         command: curl app:5000
 
-after-build:
-    image:  node:latest
-    fail-fast: false
-    commands :
-       - echo 'after build'
+
   #push to registry:
   #  type: push
   #  candidate: ${{build-step}}
