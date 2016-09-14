@@ -2,6 +2,20 @@ version: '1.0'
 steps:
 
 
+ setup-step:
+    image:  node:latest
+    fail-fast: false
+    commands :
+       - echo 'we are about to start'
+
+ unit-tests:
+     image: ${{build-step}}
+     fail-fast: false
+     working-directory : ${{initial-clone}}
+     commands:
+       - npm test
+       - echo $(dat
+
  build-step:
      type: build
      dockerfile: Dockerfile
