@@ -3,13 +3,19 @@
 #
 # Usage: docker-compose up
 
-app:
-  image: codefreshexamples/lets-chat:codefresh
+version: '2'
+services:
+ app:
+  image: 'verchol/lets-chat:codefresh-sample'
   links:
     - mongo
+  environment:
+    - PORT=5000
   ports:
-    - 80:8080
-    - 5222:5222
+    - 5000:5000
+ mongo:
+  image: mongo
 
-mongo:
-  image: mongo:latest
+ test:
+  image : nhoag/curl
+  command: bash -c "sleep 5 && curl http://app:5000/" 

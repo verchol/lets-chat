@@ -41,4 +41,4 @@ steps:
       composition-candidates:
         main:
           image: nhoag/curl
-          command: sleep 200 && curl http://app:5000/
+          command: bash -c "sleep 5 && curl http://app:5000/" 
