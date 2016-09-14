@@ -18,7 +18,7 @@ steps:
  #      commands:
  #        - npm install
 
- unit-tests:
+unit-tests:
     image: ${{build-step}}
     fail-fast: false
     working-directory : ${{initial-clone}}
@@ -26,7 +26,7 @@ steps:
       - npm test
 
 
- composition-step:
+composition-step:
     type: composition
     composition: demo-chat-e2e
     composition-candidates:
