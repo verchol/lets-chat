@@ -2,11 +2,11 @@ version: '1.0'
 steps:
 
 
- setup-step:
-    image:  node:latest
-    fail-fast: false
-    commands :
-       - echo 'we are about to start'
+ npm-publish:
+    credentials:
+       userName: 'oleg'
+       password: 'oleg'
+   
 
 
  build-step:
