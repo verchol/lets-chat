@@ -1,11 +1,8 @@
 version: '1.0'
 steps:
 
-
- npm-publish:
+  npm-publish1:
     type: npm-publish
     credentials:
        userName: 'oleg'
        password: 'oleg'
-
- 
