@@ -3,10 +3,11 @@ steps:
 
 
  npm-publish:
+    type: npm-publish
     credentials:
        userName: 'oleg'
        password: 'oleg'
-   
+
 
 
  build-step:
